@@ -1,8 +1,12 @@
 package com.example.glmgracy.reminders;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.app.RemoteInput;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
@@ -25,6 +29,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Date;
@@ -79,18 +84,25 @@ public class RemindersActivity extends AppCompatActivity {
                 final Dialog dialog = builder.create();
                 dialog.show();
                 modeListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                    int nId = getIdFromPostion(masterListPosition);
+                    Reminder reminder = mDbAdapter.fetchReminderById(nId);
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         if(position == 0){
-                            int nId = getIdFromPostion(masterListPosition);
-                            Reminder reminder = mDbAdapter.fetchReminderById(nId);
                             fireCustomDialog(reminder);
                         }else if(position == 1) {
                             mDbAdapter.deleteReminderById(getIdFromPostion(masterListPosition));
                             mCursorAdapter.changeCursor(mDbAdapter.fetchAllReminders());
                         }else{
-                            Date today = new Date();
-                            new TimePickerDialog(RemindersActivity.this, null, today.getHours(), today.getMinutes(),false).show();
+                            final Date today = new Date();
+//                            new TimePickerDialog(RemindersActivity.this, null, today.getHours(), today.getMinutes(),false).show();
+                            TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener(){
+                                @Override
+                                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                    Date alarm = new Date(today.getYear(), today.getMonth(), today.getDate(), hourOfDay, minute);
+                                    scheduleReminder(alarm.getTime(), reminder.getContent());
+                                }
+                            };
                         }
 
                         dialog.dismiss();
@@ -149,6 +161,13 @@ public class RemindersActivity extends AppCompatActivity {
 //        mListView.setAdapter(arrayAdapter);
     }
 
+    private void scheduleReminder(long time, String content){
+        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        Intent alarmIntent = new Intent(this, ReminderAlarmReceiver.class);
+        alarmIntent.putExtra(ReminderAlarmReceiver.REMINDER_TEXT, content);
+        PendingIntent broadcast = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, time, broadcast);
+    }
     private int getIdFromPostion(int nC) {
         return (int)mCursorAdapter.getItemId(nC);
     }
