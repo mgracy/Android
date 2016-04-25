@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:id="@+id/book_plan_head" android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/left_arrow" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	        <EditText android:id="@+id/download_search_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" android:lines="1" android:background="@drawable/search_bar11" />
+	       	<Button android:id="@+id/download_search_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	        <Button android:id="@+id/detail_home" android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_alignParentRight="true" android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout android:id="@+id/book_plan_title" android:layout_below="@id/book_plan_head" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="20dp" android:layout_marginBottom="1dp">
+        <TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="XX课程计划" android:textSize="25dip" android:textColor="@color/black" android:gravity="center"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/shadow_top"  android:layout_marginTop="15dp"></LinearLayout>
+    </LinearLayout>
+
+    
+    <LinearLayout android:layout_below="@id/book_plan_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:onClick="choseStartDate" android:paddingLeft="10dip"  android:paddingTop="10dip" android:paddingBottom="10dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+       	 	<TextView android:id="@+id/book_plan_start_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textSize="20dip" android:hint="在这里填写开始时间"/> 
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split_small41"  />
+        <LinearLayout android:onClick="choseEndDate" android:paddingLeft="10dip" android:paddingTop="10dip" android:paddingBottom="10dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        	<TextView android:id="@+id/book_plan_end_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textSize="20dip" android:hint="在这里填写结束时间"/> 	
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split_small41"  />
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_alignParentBottom="true" android:layout_marginBottom="20dip">
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/shadow_bottom"  android:layout_marginTop="15dp"></LinearLayout>
+    	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center">
+    	    <Button android:onClick="cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/cancel_big"/>
+    	    <Button android:onClick="save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/save_big" android:layout_marginLeft="20dip"/>
+    	</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

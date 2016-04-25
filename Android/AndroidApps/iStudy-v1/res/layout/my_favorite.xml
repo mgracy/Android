@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="gotoMenu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/menu11" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	        <EditText android:id="@+id/myfav_search_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" android:lines="1" android:background="@drawable/search_bar11" />
+	       	<Button android:id="@+id/myfav_search_content" android:onClick="searchContent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	       	<Button android:id="@+id/myfav_search_button" android:onClick="searchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	        <Button android:id="@+id/detail_home" android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_alignParentRight="true" android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+    
+    <ListView android:id="@+id/my_favoriate_listview"  android:dividerHeight="0dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+</LinearLayout>

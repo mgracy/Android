@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="gotoMenu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/menu11" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	        <EditText android:id="@+id/my_order_search_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" android:lines="1" android:background="@drawable/search_bar11" />
+	       	<Button android:id="@+id/my_order_search_content" android:onClick="searchContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:visibility="gone" android:layout_marginRight="5dp" />
+	       	<Button android:id="@+id/my_order_search_button" android:onClick="searchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	        <Button android:id="@+id/my_order_home" android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_alignParentRight="true" android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_marginBottom="10dp">
+        <RadioGroup android:id="@+id/my_order_radio_group" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_horizontal">
+            <RadioButton android:id="@+id/my_order_pay_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:checked="true" android:textColor="@color/black" android:background="@xml/radio_button" android:text="已支付" android:gravity="center"/>
+            <RadioButton android:id="@+id/my_order_no_pay_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:checked="false" android:textColor="@color/black" android:background="@xml/radio_button" android:text="未支付" android:gravity="center"/>
+        </RadioGroup>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split41"  android:layout_marginTop="10dp"></LinearLayout>
+    </LinearLayout>
+
+    
+    <ListView android:id="@+id/my_order_pay"  android:dividerHeight="0dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+    <ListView android:id="@+id/my_order_nopay"  android:dividerHeight="0dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+    
+</LinearLayout>

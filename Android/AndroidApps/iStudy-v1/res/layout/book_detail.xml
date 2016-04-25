@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center">
+        <Button android:onClick="back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/left_arrow" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	        <EditText android:id="@+id/detail_search_textview" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" android:background="@drawable/search_bar11" />
+	        <Button android:id="@+id/detail_search_content" android:onClick="searchContent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	       	<Button android:id="@+id/detail_search_button" android:onClick="searchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	        <Button android:id="@+id/detail_home" android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_alignParentRight="true" android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/detail_woodbg">
+	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"  android:paddingTop="10dip" android:paddingLeft="10dip" >
+	        <ImageView android:id="@+id/book_detail_image" android:layout_height="120dip" android:layout_width="80dip" android:background="@drawable/poster"/>
+	    	<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginLeft="10dip" android:orientation="vertical"> 
+	    		<TextView android:id="@+id/book_detail_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20dip" android:textColor="@color/black" android:text="标题"/>    
+	    		<TextView android:id="@+id/book_detail_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:layout_marginTop="3dip" android:text="描述描述描述描述"/> 
+	    		<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="3dip" android:orientation="horizontal">
+	    		    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:text="作者:"/>
+	    			<TextView android:id="@+id/book_detail_author" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:text="三毛"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="3dip" android:orientation="horizontal">
+	    		    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:text="进度:"/>
+	    			<TextView android:id="@+id/book_detail_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:text="50%"/>
+	    		</LinearLayout>
+	    		<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="3dip" android:orientation="horizontal">
+	    		    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:text="建议:"/>
+	    			<TextView android:id="@+id/book_detail_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dip" android:textColor="@color/black" android:text="100%"/>
+	    		</LinearLayout>
+
+	    		<ProgressBar
+	    		    android:id="@+id/book_detail_progressbar"
+	    		    style="?android:attr/progressBarStyleHorizontal"
+	    		    android:layout_width="150dip"
+	    		    android:layout_height="wrap_content"
+	    		    android:layout_marginTop="5dip"
+	    		    android:minHeight="5dip" android:maxHeight="5dip" android:progress="40"
+	    		   />
+
+	    	</LinearLayout>
+	    </LinearLayout>
+	    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15dip">
+	        	<ImageButton android:id="@+id/book_detail_play" android:onClick="play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/play" android:layout_alignParentRight="true" android:layout_marginRight="10dip"/>
+	    		<ImageButton android:id="@+id/book_detail_download" android:onClick="download" android:layout_toLeftOf="@id/book_detail_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/download"  />
+	    		<ImageButton android:id="@+id/book_detail_share" android:onClick="share" android:layout_toLeftOf="@id/book_detail_download" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/share"  />
+	    		<ImageButton android:id="@+id/book_detail_fav" android:onClick="favorite" android:layout_toLeftOf="@id/book_detail_share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/fav" />
+	    		<ImageButton android:id="@+id/book_detail_plan" android:onClick="plan" android:layout_toLeftOf="@id/book_detail_fav" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/plan" />
+	    		<ImageButton android:id="@+id/book_detail_friend" android:onClick="friends" android:layout_toLeftOf="@id/book_detail_plan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/friends_many" />
+	    </RelativeLayout>
+	</LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split41" ></LinearLayout>
+    <RadioGroup android:id="@+id/book_detail_radio_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_horizontal">
+        <RadioButton android:id="@+id/book_detail_content_radio" android:checked="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:button="@null" android:text="内容" android:textColor="@color/black" android:gravity="center"/>
+        <RadioButton android:id="@+id/book_detail_sign_radio" android:checked="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="书签" android:textColor="@color/black" android:gravity="center"/>
+        <RadioButton android:id="@+id/book_detail_note_radio" android:checked="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="笔记" android:textColor="@color/black" android:gravity="center"/>
+        <RadioButton android:id="@+id/book_detail_recommend_radio" android:checked="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="课程推荐" android:textColor="@color/black" android:gravity="center"/>
+    </RadioGroup>
+    
+    <ListView android:id="@+id/book_detail_content_list"  android:dividerHeight="0dip" android:layout_marginTop="3dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ListView android:id="@+id/book_detail_sign_list"  android:dividerHeight="0dip" android:layout_marginTop="3dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="gone"/>
+    <ListView android:id="@+id/book_detail_note_list"  android:dividerHeight="0dip" android:layout_marginTop="3dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="gone"/>
+    <ListView android:id="@+id/book_detail_recommend_list"  android:dividerHeight="0dip" android:layout_marginTop="3dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="gone"/>
+    
+</LinearLayout>

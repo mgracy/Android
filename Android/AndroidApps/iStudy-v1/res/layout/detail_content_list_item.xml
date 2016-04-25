@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15dip" android:layout_marginBottom="15dip">
+	    <TextView android:id="@+id/detail_content_list_title" android:layout_alignParentLeft="true" android:gravity="center_vertical" android:layout_marginLeft="10dip" android:textSize="18sp"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="标题xxx1"/>
+		<TextView android:id="@+id/detail_content_list_page" android:layout_alignParentRight="true" android:gravity="center_vertical"  android:layout_marginRight="10dip" android:textSize="18sp"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="第2页"/>
+	</RelativeLayout>
+	<LinearLayout android:layout_alignParentBottom="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/split_small41"></LinearLayout>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black" 
+    android:layout_gravity="center">
+	
+    
+    <VideoView android:id="@+id/movie_container" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_gravity="center"/>
+    
+    <RelativeLayout android:id="@+id/movie_container_header" android:visibility="gone" android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/left_arrow" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	       	<Button android:onClick="addNote" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/notes" android:layout_marginRight="5dp" />
+	       	<Button android:onClick="addBookMark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bookmark" android:layout_marginRight="5dp" />
+	        <Button android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+    
+</FrameLayout>

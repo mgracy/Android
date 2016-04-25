@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20sp" android:textColor="@color/white" android:text="登		录" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+	
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical" android:background="@xml/corner_1" android:gravity="center" android:layout_marginLeft="25dip" android:layout_marginRight="25dip" android:layout_marginTop="40dip" >
+        <LinearLayout android:orientation="horizontal"  android:padding="10dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        	<EditText android:id="@+id/login_username"  android:background="@color/white" android:textColor="@color/black" android:hint="用户名:" android:layout_height="wrap_content" android:layout_width="match_parent"  />
+    	</LinearLayout>
+    	<View android:background="@color/black" android:layout_width="fill_parent" android:layout_height="1.0dip" />	
+    	<LinearLayout android:orientation="horizontal"  android:padding="10dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+    		<EditText android:id="@+id/login_password" android:background="@color/white" android:textColor="@color/black" android:hint="密码:" android:layout_height="wrap_content" android:layout_width="match_parent"  />
+    	</LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="left" android:layout_marginTop="20dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dip">
+    	<Button android:onClick="register" android:layout_alignParentLeft="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:text="注           册" android:background="@drawable/reg_small"/>
+    	<Button android:onClick="login" android:layout_alignParentRight="true" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="登           录"  android:textColor="@color/white" android:background="@drawable/loginbtn" />    
+    </RelativeLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dip" android:layout_gravity="left">
+        <Button android:onClick="forgetPassword" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="忘记密码?" android:textColor="@color/blue" android:background="@color/white"/>
+    </LinearLayout>
+    
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="row_bg_grid_view">
+        <attr name="row_background" format="reference"/>
+        <attr name="row_bg_height" format="dimension" />
+    </declare-styleable>
+</resources>

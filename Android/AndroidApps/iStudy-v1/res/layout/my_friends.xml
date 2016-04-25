@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="gotoMenu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/menu11" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	        <EditText android:id="@+id/my_friends_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" android:lines="1" android:background="@drawable/search_bar11" />
+	       	<Button android:id="@+id/my_friends_search_content" android:onClick="searchContent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	       	<Button android:id="@+id/my_friends_search_button" android:onClick="searchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	        <Button android:id="@+id/my_friends_home" android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_alignParentRight="true" android:layout_marginRight="5dp"/>
+    		<Button android:onClick="operation" android:id="@+id/my_friends_operation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/operation11"  android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_marginBottom="10dp">
+        <RadioGroup android:id="@+id/my_friends_radio_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginLeft="5dip" android:gravity="center_horizontal">
+	        <RadioButton android:id="@+id/my_friends_classmate_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="同学" android:textColor="@color/black" android:gravity="center"/>
+	        <RadioButton android:id="@+id/my_friends_friend_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:background="@xml/radio_button" android:button="@null" android:text="好友" android:textColor="@color/black" android:gravity="center"/>
+   		</RadioGroup>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split41"  android:layout_marginTop="8dp"></LinearLayout>
+    </LinearLayout>
+
+    
+    <ListView android:id="@+id/my_friends_classmate_listview"  android:dividerHeight="0dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="gone"></ListView>
+    <ListView android:id="@+id/my_friends_friend_listview"  android:dividerHeight="0dip" android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

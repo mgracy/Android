@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:id="@+id/book_plan_head" android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/left_arrow" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+    	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="25dip" android:text="关于" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    
+    <TextView android:layout_below="@id/book_plan_head" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="关于关于关于关于关于关于关于关于关于关于" android:layout_marginTop="10dip" android:textSize="20dip" android:layout_marginLeft="15dip" android:layout_marginRight="15dip"/>
+    
+</RelativeLayout>

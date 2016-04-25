@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" 
+    android:gravity="center">
+    
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15dip" android:gravity="center_vertical">
+	    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" >
+	        <TextView android:id="@+id/card_item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20dip" android:textColor="@color/black" android:text="sd1"/>
+	    </LinearLayout>
+	    
+	     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginLeft="20dip">
+	       	<TextView android:id="@+id/card_item_storage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13dip" android:textColor="@color/black" android:text="12334k/23456k"/>
+	    	<ProgressBar android:id="@+id/card_item_progressbar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="150dip" android:layout_height="wrap_content" android:layout_marginTop="5dip" android:minHeight="5dip" android:maxHeight="5dip" android:progress="40" />
+	    </LinearLayout>
+	    
+	    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20dip">
+	    	<CheckBox android:id="@+id/card_item_checkbox" android:checked="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/checkbox_button" android:button="@null"/>
+	    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/split_small41"></LinearLayout>
+</LinearLayout>

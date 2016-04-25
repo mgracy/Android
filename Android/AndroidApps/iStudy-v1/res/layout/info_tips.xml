@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:id="@+id/book_plan_head" android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/left_arrow" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+    	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="25dip" android:text="信息提示" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/g3_tips" android:layout_below="@id/book_plan_head" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dip" android:layout_marginTop="10dip" android:layout_marginBottom="10dip" >
+    	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="处于3G网络时提醒" android:textSize="20dip" android:textColor="@color/black" android:layout_centerVertical="true" />
+    	<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:checked="true" android:background="@xml/checkbox_button" android:layout_alignParentRight="true" android:layout_marginRight="15dip"/>
+    </RelativeLayout>
+    
+    <LinearLayout  android:id="@+id/g3_tips_line" android:layout_below="@id/g3_tips"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/split_small41" />
+    
+    <RelativeLayout  android:id="@+id/sdcard_tips" android:layout_below="@id/g3_tips_line"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dip" android:layout_marginTop="10dip" android:layout_marginBottom="10dip" >
+    	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="下载空间不足时提醒" android:textSize="20dip" android:textColor="@color/black" android:layout_centerVertical="true" />
+    	<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:checked="true" android:background="@xml/checkbox_button" android:layout_alignParentRight="true" android:layout_marginRight="15dip"/>
+    </RelativeLayout>
+    
+    <LinearLayout android:id="@+id/sdcard_tips_line" android:layout_below="@id/sdcard_tips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/split_small41" />
+    
+   
+     <RelativeLayout  android:id="@+id/version_tips" android:layout_below="@id/sdcard_tips_line"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dip" android:layout_marginTop="10dip" android:layout_marginBottom="10dip" >
+    	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="版本更新时提醒" android:textSize="20dip" android:textColor="@color/black" android:layout_centerVertical="true" />
+    	<CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@null" android:checked="true" android:background="@xml/checkbox_button" android:layout_alignParentRight="true" android:layout_marginRight="15dip"/>
+    </RelativeLayout>
+    
+    <LinearLayout  android:id="@+id/version_tips_line" android:layout_below="@id/version_tips"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/split_small41" />
+    
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="100dip" android:gravity="center" android:layout_alignParentBottom="true" android:orientation="vertical">
+    	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/shadow_bottom"/>	
+    	<Button android:onClick="save" android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/save_big"/>
+    </LinearLayout>
+    
+</RelativeLayout>

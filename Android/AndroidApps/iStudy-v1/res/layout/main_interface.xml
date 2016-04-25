@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/wood_bg">
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="mainMenu" android:id="@+id/mainmenu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/menu11" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+            <EditText android:id="@+id/searchText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" android:background="@drawable/search_bar11" android:visibility="gone" android:layout_marginRight="5dp"/>
+            <Button android:onClick="searchContent" android:id="@+id/do_search" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp"/>
+	        <Button android:onClick="searchButton" android:id="@+id/search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp"/>
+	        <Button android:onClick="list" android:id="@+id/list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/list11"  android:layout_marginRight="5dp"/>
+	        <Button android:onClick="operation" android:id="@+id/operation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/operation11"  android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" >
+        <RadioGroup android:id="@+id/main_book_radio_group" android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_horizontal">
+        	<RadioButton android:id="@+id/main_book_all" android:checked="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="全部" android:textColor="@color/black" android:gravity="center"/>
+        	<RadioButton android:id="@+id/main_book_valid" android:checked="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="已完成" android:textColor="@color/black" android:gravity="center"/>
+        	<RadioButton android:id="@+id/main_book_invalid" android:checked="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="已过期" android:textColor="@color/black" android:gravity="center"/>
+        	<RadioButton android:id="@+id/main_book_recommend" android:checked="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:text="推荐" android:textColor="@color/black" android:gravity="center"/>
+        </RadioGroup>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split41"  android:layout_marginTop="10dp"></LinearLayout>
+    </LinearLayout>
+	
+	<ListView android:id="@+id/main_book_scroll_grid" android:dividerHeight="0dip" android:divider="@null" android:layout_height="fill_parent" android:layout_width="fill_parent" ></ListView>
+    <ListView android:id="@+id/main_book_list"  android:dividerHeight="0dip" android:divider="@null" android:layout_height="fill_parent" android:layout_width="fill_parent" android:visibility="gone"></ListView>
+</LinearLayout>

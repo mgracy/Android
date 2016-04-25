@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">iStudy</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+     <string name="favorite_success">收藏成功</string>
+     <string name="downloading">正在下载</string>
+     <string name="clear_memory_success">成功清空缓存</string>
+     
+     <string name="save_success">保存成功</string>
+     <string name="add_success">添加成功</string>
+     <string name="delete_success">删除成功</string>
+     <string name="purchae_success">成功提交订单</string>
+     <string name="pay_success">支付成功</string>
+     <string name="bookmark_success">添加书签成功</string>
+     <string name="goto_page_dialog_title">选择页数</string>
+     <string name="goto_page_go_button">跳转</string>
+     <string name="page_of">从 %1$d 到 %2$d 页</string>
+     <string name="first_page">首页</string>
+     <string name="last_page">末页</string>
+     <string name="invalid_page_number">无效的页数</string>
+     <string name="error">错误</string>
+     <string name="add_book_note_success">添加笔记成功</string>
+     <string name="cancel_success">取消成功</string>
+     <string name="pause_download">暂停下载</string>
+     <string name="continue_download">继续下载</string>
+     <string name="enter_note_text">请输入笔记内容</string>
+     <string name="book_marker">书签</string>
+     <string name="book_note">课程笔记</string>
+     <string name="change_book_type">选择课程类型</string>
+     
+     
+     
+	<string name="find_cancel_button">Cancel</string>
+	<string name="toggle_invert">Invert</string>
+	<string name="toggle_fine_zoom">Toggle fine zoom</string>
+	<string name="cancel">Cancel</string>
+	<string name="options">Options</string>
+	<string name="zoom_animation">Zoom buttons</string>
+	
+	<string name="default_zoom_animation">2</string> 
+	<string name="page_animation">Page number/count</string>
+	
+	<string name="default_page_animation">2</string> 
+	<string name="fade_speed">Zoom and page fade wait</string>
+	
+	<string name="default_fade_speed">7</string> 
+	<string name="dirs_first">List directories first</string>
+	<string name="show_extension">Show .pdf extension</string>
+	<string name="orientation">Orientation</string>
+	<string name="default_orientation">0</string>
+	
+	<string name="viewer">PDF Viewer</string>
+	<string name="selector">File Chooser</string>
+	<string name="fullscreen">Fullscreen</string>
+	<string name="render_ahead">Render ahead</string>
+	<string name="render_ahead_sub">Uses more memory but faster forward scrolling.</string>
+	<string name="gray">Grayscale</string>
+	<string name="gray_sub">No colors, slightly slower, but uses less memory.</string>
+	<string name="page">Page</string>
+	<string name="color_mode">Color mode</string>
+	
+	<string name="default_color_mode">0</string>
+	<string name="omit_images">Skip images</string>
+	<string name="vertical_scroll_lock">Vertical scroll lock</string>
+	<string name="vertical_scroll_lock_sub">To scroll horizontally, you must first move horizontally 1/5 of the screen width.</string>
+	<string name="box">PDF page box type</string> 
+	
+	<string name="default_box">2</string>
+	<string name="extra_cache">Extra cache memory</string> 
+	<string name="extra_cache_sub">Using extra cache memory can improve scrolling smoothness at the expense of stability.</string> 
+	
+	<string name="default_extra_cache">0</string>
+	<string name="side_margin">Extra side margins</string>	
+	<string name="default_side_margin">0</string>
+		
+	<string name="top_margin">Space between pages</string>
+	<string name="default_top_margin">10</string>
+	<string name="remove_from_recent">Remove from recent</string>
+	<string name="delete">Delete file</string>
+	
+	<string name="default_double_tap_action">2</string>
+	<string name="double_tap_action">Double tap action</string>
+	
+	<string name="volume_pair">Volume -/+ key actions</string>
+	<string name="up_down_pair">Up/Down key actions</string>
+	<string name="left_right_pair">Left/Right key actions</string>
+	<string name="zoom_pair">Zoom button actions</string>
+	<string name="long_zoom_pair">Long press zoom button actions</string>
+	<string name="right_up_down_pair">Nook Touch right up/down key actions</string>
+	<string name="top_bottom_tap_pair">Action for top/bottom tap</string>
+	<string name="default_volume_pair">1</string>
+	<string name="default_up_down_pair">1</string>
+	<string name="default_left_right_pair">2</string>
+	<string name="default_zoom_pair">7</string>
+	<string name="default_long_zoom_pair">8</string>
+	<string name="default_right_up_down_pair">1</string>
+	<string name="default_top_bottom_tap_pair">0</string>
+	<string name="hw">Hardware Specific Settings</string>
+	<string name="eink">E-ink optimizations</string>
+	<string name="nook2">Nook2 fast e-ink refresh</string>
+	<string name="disabled">Disabled</string>
+	<string name="keep_on">Keep screen on while reading</string>
+	<string name="show_zoom_on_scroll">Show zoom when scrolling</string>
+	<string name="history">Show recent files</string>
+    <string name="table_of_contents">Table of Contents</string>
+    <string name="toc_dialog_title">Table of Contents</string>
+    <string name="close">Close</string>
+    <string name="text_reflow">Text Reflow</string>
+    
+</resources>

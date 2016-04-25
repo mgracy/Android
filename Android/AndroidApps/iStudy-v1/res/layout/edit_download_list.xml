@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="gotoMenu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/menu11" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:orientation="horizontal">
+	        <EditText android:id="@+id/download_search_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" android:lines="1" android:background="@drawable/search_bar11" />
+	       	<Button android:id="@+id/download_search_content" android:onClick="searchContent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	       	<Button android:id="@+id/download_search_button" android:onClick="searchButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/search11" android:layout_marginRight="5dp" />
+	        <Button android:id="@+id/detail_home" android:onClick="gotoHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/home11" android:layout_alignParentRight="true" android:layout_marginRight="5dp"/>
+    	</LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_marginBottom="10dp">
+	    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+	    	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:gravity="center_horizontal">
+	   			<Button android:id="@+id/edit_downloaded_button" android:onClick="downloaded" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:background="@xml/radio_button" android:layout_marginLeft="1dip" android:button="@null" android:textSize="17sp"  android:text="已完成" android:textColor="@color/black" android:gravity="center"/>
+	    		<Button android:id="@+id/edit_downloading_button" android:onClick="downloading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:background="@xml/radio_button" android:button="@null" android:text="未完成" android:textSize="17sp"  android:textColor="@color/black" android:gravity="center"/>
+   			</LinearLayout>
+   			<Button android:id="@+id/edit_download_delete_button" android:onClick="delete" android:layout_alignParentRight="true" android:layout_width="50dip" android:layout_height="wrap_content" android:checked="true" android:background="@drawable/segment_press51" android:button="@null" android:text="删除" android:layout_marginRight="10dip" android:textSize="17sp" android:textColor="@color/black" android:gravity="center"/>
+        </RelativeLayout>
+        <LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:background="@drawable/split41"  android:layout_marginTop="8dp"></LinearLayout>
+    </LinearLayout>
+
+    
+    <ListView android:id="@+id/edit_download_listview"  android:divider="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+</LinearLayout>

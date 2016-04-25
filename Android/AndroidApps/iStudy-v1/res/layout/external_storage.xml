@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    
+    <RelativeLayout android:id="@+id/book_plan_head" android:background="@drawable/nav11" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:onClick="back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/left_arrow" android:layout_alignParentLeft="true" android:layout_marginLeft="5dp"/>
+    	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="25dip" android:text="内存设置" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/g3_tips" android:layout_below="@id/book_plan_head" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15dip" android:layout_marginTop="10dip" android:layout_marginBottom="10dip" >
+    	<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="课程下载到：" android:textSize="20dip" android:textColor="@color/black" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout  android:id="@+id/g3_tips_line" android:layout_below="@id/g3_tips"  android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/split_small41" />
+    
+    <LinearLayout android:id="@+id/card_save_layout" android:layout_width="fill_parent" android:layout_height="100dip" android:gravity="center" android:layout_alignParentBottom="true" android:orientation="vertical">
+    	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="@drawable/shadow_bottom"/>	
+    	<Button android:onClick="save" android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/save_big"/>
+    </LinearLayout>
+    
+    <ListView android:id="@+id/card_list_view" android:layout_below="@id/g3_tips_line" android:dividerHeight="0dip" android:divider="@null" android:layout_above="@id/card_save_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"></ListView>
+</RelativeLayout>
