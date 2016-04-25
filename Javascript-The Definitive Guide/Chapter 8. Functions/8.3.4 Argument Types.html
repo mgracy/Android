@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript: The Definitive Guide</title>
+	<style>
+		span{
+			margin-left: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function max(/* ... */)
+		{
+			var max = Number.NEGATIVE_INFINITY;
+			// Loop through the arguments, looking for, and remembering, the biggest.
+			for (var i = 0; i < arguments.length; i++) {
+				if(arguments[i] > max) 
+					max = arguments[i];	
+					console.log(max);					
+			};
+			console.log(max);
+			return max;
+		}
+		var largest = max(1, 10, 100, 2, 3, 10000, 4);
+
+		// //change the value
+		// function f(x){
+		// 	console.log(x);
+		// 	arguments[0]=null;
+		// 	console.log(x);
+		// }
+		// f("gracy.ma");
+
+		// //the callee and caller properties
+		// var factorial = function(x){
+		// 	if(x<=1)
+		// 		return 1;
+		// 	console.log(x * arguments.callee(x-1));
+		// 	//return x * arguments.callee(x-1);
+		// }
+		// factorial(1);
+
+		//8.3.3 Using Object Properties As Arguments
+		function arraycopy(
+			/* array */from,
+			/* index */from_start,
+			/* array */to,
+			/* index */to_start,
+			/* integer */length
+		){
+			console.log("the function is under contruction...");
+		}
+		function easycopy(args){
+			arraycopy(
+				args.from,
+				args.from_start || 0,
+				args.to,
+				args.to_start || 0,
+				args.length
+			);
+		}
+		var a = [1,2,3,4], b=[];
+		easycopy({from:a, to: b, length:4});
+
+		// Return the sum of the elements of array(or array-like object) a.
+		// The elements of a must all be numbers or null and undefined are ignored.
+		function sum(a){
+			if(isArrayLike(a)){
+				var total = 0;
+				for (var i = 0; i < a.length; i++) { // Loop through all elements
+					var element = a[i];
+					if(element == null)
+						continue; // Skip null and undefined.
+					if(isFinite(element))
+						total +=element;
+					else
+						console.log("sum(): elements must be finite numbers");
+				}
+				return total;
+			}
+			else
+				console.log("sum(): argument must be array-like");
+		}
+
+		function flexisum(a){
+			var total = 0;
+			for (var i = 0; i < arguments.length; i++) {
+				var element = arguments[i], n;
+				if(element == null) continue; //Ignore null and undefined arguments
+				// If the argument is an array compute its sum recursively
+				// Else if it's a function ... invoke it and convert.
+				// Else try to convert it
+				if(Array.isArray(element))
+					n = flexisum.apply(this,element);
+				else if(typeof element === "function")
+					n = Number(element());
+				else n = Number(element);
+				if(isNaN(n))
+					console.log("flexisum(): can't convert " + element + " to number.")
+				total += n;
+			};
+			console.log(total);
+			return total;
+		}
+		var a=[1, 10, 100, 2, 3, 10000, 4];
+		flexisum(a);
+	</script>
+</head>
+<body>
+	<h3>8.3.4 Argument Types</h3>
+	<p><span></span>JavaScript method parameters have no declared types, and no type checking is
+performed on the values you pass to a function. You can help to make your code selfdocumenting by choosing descriptive names for function arguments and also by including argument types in comments, as in the arraycopy() method just shown. For
+arguments that are optional, you can include the word “optional” in the comment. And
+when a method can accept any number of arguments, you can use an ellipsis:</p>
+<br>
+function max(/* number... */) { /* code here */ }
+
+</body>
+</html>

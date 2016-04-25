@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript: The Definitive Guide</title>
+	<script type="text/javascript">
+	function getPropertyNames(o, /* optional */ a)
+	{
+		// If undefined, use a new array
+		// a = a || [];
+		// Recall from §4.10.2 that the || operator returns its first argument if that argument is truthy and otherwise returns its second argument.
+		if(a === undefined) a = [];
+		for(var property in o)
+			a.push(property);
+		return a;
+	}
+	var a = getPropertyNames(o);
+	getPropertyNames(p,a);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

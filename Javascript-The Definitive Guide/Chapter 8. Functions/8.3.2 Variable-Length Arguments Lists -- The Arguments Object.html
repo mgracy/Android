@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript: The Definitive Guide</title>
+	<style>
+		span{
+			margin-left: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function max(/* ... */)
+		{
+			var max = Number.NEGATIVE_INFINITY;
+			// Loop through the arguments, looking for, and remembering, the biggest.
+			for (var i = 0; i < arguments.length; i++) {
+				if(arguments[i] > max) 
+					max = arguments[i];	
+					console.log(max);					
+			};
+			console.log(max);
+			return max;
+		}
+		var largest = max(1, 10, 100, 2, 3, 10000, 4);
+
+		//change the value
+		function f(x){
+			console.log(x);
+			arguments[0]=null;
+			console.log(x);
+		}
+		f("gracy.ma");
+
+		//the callee and caller properties
+		var factorial = function(x){
+			if(x<=1)
+				return 1;
+			console.log(x * arguments.callee(x-1));
+			//return x * arguments.callee(x-1);
+		}
+		factorial(1);
+
+		//8.3.3 Using Object Properties As Arguments
+		function arraycopy(
+			/* array */from,
+			/* index */from_start,
+			/* array */to,
+			/* index */to_start,
+			/* integer */length
+		){
+			console.log("the function is under contruction...");
+		}
+		function easycopy(args){
+			arraycopy(
+				args.from,
+				args.from_start || 0,
+				args.to,
+				args.to_start || 0,
+				args.length
+			);
+		}
+		var a = [1,2,3,4], b=[];
+		easycopy({from:a, to: b, length:4});
+	</script>
+</head>
+<body>
+	<h3>8.3.2 Variable-Length Argument Lists: The Arguments Object</h3>
+	<p><span></span>When a function is invoked with more argument values than there are parameter
+names, there is no way to directly refer to the unnamed values. The Arguments object
+provides a solution to this problem. Within the body of a function, the identifier
+arguments refers to the Arguments object for that invocation. The Arguments object is
+an array-like object (see §7.11) that allows the argument values passed to the function
+to be retrieved by number, rather than by name.</p>
+	<p><span></span>
+This special behavior of the Arguments object has been removed in the strict mode of
+ECMAScript 5. There are other strict-mode differences as well. In non-strict functions,
+arguments is just an identifier. In strict mode, it is effectively a reserved word. Strictmode functions cannot use arguments as a parameter name or as a local variable name,
+and they cannot assign values to arguments.
+	</p>
+</body>
+</html>
