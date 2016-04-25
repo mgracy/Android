@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>live(type,[data],fn)</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.entered{
+			background-color: blue;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+		div
+		{
+		  	margin:3px; width:40px; height:40px;
+        	position:absolute; left:0px; top:30px; 
+       		background:green; display:none;
+       	}
+	    div.newcolor { background:blue; }
+	    span { color:red; }
+
+	</style>
+	<script type="text/javascript" src="../jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css({"background":"lightgreen","margin-left":"10px"});
+			// debugger;
+		});
+	</script>
+</head>
+<body>
+<form action="#">
+	<h1>live(type, [data], fn)</h1>
+	<h2>概述<span class="caret"></span></h2><hr>
+	jQuery 给所有匹配的元素附加一个事件处理函数，即使这个元素是以后再添加进来的也有效。
+	<br>这个方法是基本是的 .bind() 方法的一个变体。
+	<br>使用 .bind() 时，选择器匹配的元素会附加一个事件处理函数，
+	<br>而以后再添加的元素则不会有。为此需要再使用一次 .bind() 才行。
+	<br>比如说
+
+
+
+<br />
+	<button id="old">.trigger("focus")</button>
+	<button id="new">.triggerHandler("focus")</button>
+	<input type="text" value="To Be Focused"/>
+	
+
+	<p>Paragraph One</p><span></span>
+	<div>Div One</div>
+	<code>
+		<br>$("#old").click(function(){
+		<br>  $("input").trigger("focus");
+		<br>});
+		<br>$("#new").click(function(){
+		<br>  $("input").triggerHandler("focus");
+		<br>});
+		<br>$("input").focus(function(){
+		<br>  $("<span>Focused!</span>").appendTo("body").fadeOut(1000);
+		<br>});
+	</code>
+
+</form>
+
+</body>
+</html>

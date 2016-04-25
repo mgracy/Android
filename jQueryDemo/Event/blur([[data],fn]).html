@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>blur([[data],fn])</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.entered{
+			background-color: blue;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+		div
+		{
+		  	margin:3px; width:40px; height:40px;
+        	position:absolute; left:0px; top:30px; 
+       		background:green; display:none;
+       	}
+	    div.newcolor { background:blue; }
+	    span { color:red; }
+
+	</style>
+	<script type="text/javascript" src="../jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css({"background":"lightgreen","margin-left":"10px"});
+			// debugger;
+		});
+	</script>
+</head>
+<body>
+<form action="#">
+	<h1>blur([[data],fn])</h1>
+	<h2>概述<span class="caret"></span></h2><hr>
+	当元素失去焦点时触发 blur 事件。
+	<br>这个函数会调用执行绑定到blur事件的所有函数，包括浏览器的默认行为。
+	<br>可以通过返回false来防止触发浏览器的默认行为。
+	<br>blur事件会在元素失去焦点的时候触发，既可以是鼠标行为，也可以是按tab键离开的
+
+
+	<p>这是一个段落</p>
+	<button>Click Me</button>
+	<table class="table" border="1">
+		<tr>
+			<th>Header 1</th>
+			<th>Header 2</th>
+		</tr>
+		<tr>
+			<td>Value 1</td>
+			<td>Value 2</td>
+		</tr>
+		<tr>
+			<td>Value 3</td>
+			<td>Value 4</td>
+		</tr>
+		<tr>
+			<td>Value 5</td>
+			<td>Value 6</td>
+		</tr>
+	</table>
+	<code>
+		<br>over,out 描述:
+		<br>鼠标悬停的表格加上特定的类
+		<br>jQuery 代码:
+		<br>$("td").hover(
+		<br>  function () {
+		<br>    $(this).addClass("hover");
+		<br>  },
+		<br>  function () {
+		<br>    $(this).removeClass("hover");
+		<br>  }
+		<br>);out 描述:
+		<br>hover()方法通过绑定变量"handlerInOut"来切换方法。
+<br>
+		<br>jQuery 代码:
+		<br>$("td").bind("mouseenter mouseleave",handlerInOut);
+		<br>$("td").hover(handlerInOut);
+	</code>
+</form>
+	
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>考察this</title>
+	<script type="text/javascript">
+	var Length = 10;
+	var aa,ab,ac;
+	function fn(){
+		console.log(this.length);
+		// alert(this.length);
+	}
+	var obj = {
+		aaa: 50,
+		bbb: 100,
+		method: function(fn){
+			fn()
+			arguments[0]()
+		}
+	}
+	obj.method(fn,aa,ab,ac);
+
+	function f (a,b,c) {
+		console.log("f(1,2) is running...");
+		console.log(arguments.length);
+		a=100;
+		console.log(arguments[0]);
+		arguments[0]="gracy.ma";
+		console.log(a);
+		console.log(c);
+		c=2012;
+		console.log(arguments[2]);
+	}
+	f(1,2);
+
+	function getPropertyNames(o,/* optional */ a)
+	{
+		if(a === undefined) a = []; // If undefined, use a new array
+		for(var property in o)
+			a.push(property);
+		return a;
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

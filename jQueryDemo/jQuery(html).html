@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery(html,[OwnerDocument])</title>
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css("background","lightgreen");
+			debugger;
+		});
+	</script>
+</head>
+<body>
+	jQuery(html,[OwnerDocument]);
+	<!-- 描述:
+	动态创建一个 div 元素（以及其中的所有内容），并将它追加到 body 元素中。在这个函数的内部，是通过临时创建一个元素，并将这个元素的 innerHTML 属性设置为给定的标记字符串，来实现标记到 DOM 元素转换的。所以，这个函数既有灵活性，也有局限性。
+
+	jQuery 代码:
+	$("<div><p>Hello</p></div>").appendTo("body");描述:
+	创建一个 <input> 元素必须同时设定 type 属性。因为微软规定 <input> 元素的 type 只能写一次。
+
+	jQuery 代码:
+	// 在 IE 中无效:
+	$("<input>").attr("type", "checkbox");
+	// 在 IE 中有效:
+	$("<input type='checkbox'>");描述:
+	动态创建一个 div 元素（以及其中的所有内容），并将它追加到 body 元素中。在这个函数的内部，是通过临时创建一个元素，并将这个元素的 innerHTML 属性设置为给定的标记字符串，来实现标记到 DOM 元素转换的。所以，这个函数既有灵活性，也有局限性。
+
+	jQuery 代码:
+	$("<div>", {
+	  "class": "test",
+	  text: "Click me!",
+	  click: function(){
+	    $(this).toggleClass("test");
+	  }
+	}).appendTo("body");描述:
+	创建一个 <input> 元素，同时设定 type 属性、属性值，以及一些事件。
+
+	jQuery 代码:
+	$("<input>", {
+	  type: "text",
+	  val: "Test",
+	  focusin: function() {
+	    $(this).addClass("active");
+	  },
+	  focusout: function() {
+	    $(this).removeClass("active");
+	  }
+	}).appendTo("form"); -->
+</body>
+</html>

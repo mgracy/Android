@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index([selectorElement])</title>
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css("background","lightgreen");
+			debugger;
+		});
+	</script>
+</head>
+<body>
+	搜索匹配的元素，并返回相应元素的索引值，从0开始计数。
+
+	如果不给 .index() 方法传递参数，那么返回值就是这个jQuery对象集合中第一个元素相对于其同辈元素的位置。
+    如果参数是一组DOM元素或者jQuery对象，那么返回值就是传递的元素相对于原先集合的位置。
+    如果参数是一个选择器，那么返回值就是原先元素相对于选择器匹配元素中的位置。如果找不到匹配的元素，则返回-1。 具体请参考示例。
+	<br>
+	<ul>
+		<li id="foo">foo</li>
+		<li id="bar">bar</li>
+		<li id="baz">baz</li>
+	</ul>
+
+</body>
+</html>

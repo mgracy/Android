@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>click([[data],fn])</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.entered{
+			background-color: blue;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+		div
+		{
+		  	margin:3px; width:40px; height:40px;
+        	position:absolute; left:0px; top:30px; 
+       		background:green; display:none;
+       	}
+	    div.newcolor { background:blue; }
+	    span { color:red; }
+
+	</style>
+	<script type="text/javascript" src="../jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css({"background":"lightgreen","margin-left":"10px"});
+			// debugger;
+		});
+	</script>
+</head>
+<body>
+<form action="#">
+	<h1>click([[data],fn])</h1>
+	<h2>概述<span class="caret"></span></h2><hr>
+	触发每一个匹配元素的click事件。
+    <br>这个函数会调用执行绑定到click事件的所有函数。
+
+
+
+	<p>这是一个段落</p>
+	<button>Click Me</button>
+	<input type="text" value="name">
+</form>
+	
+
+</body>
+</html>

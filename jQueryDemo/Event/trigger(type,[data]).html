@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>trigger(type,[data])</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.entered{
+			background-color: blue;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+		div
+		{
+		  	margin:3px; width:40px; height:40px;
+        	position:absolute; left:0px; top:30px; 
+       		background:green; display:none;
+       	}
+	    div.newcolor { background:blue; }
+	    span { color:red; }
+
+	</style>
+	<script type="text/javascript" src="../jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css({"background":"lightgreen","margin-left":"10px"});
+			// debugger;
+		});
+	</script>
+</head>
+<body>
+<form action="#">
+	<h2>概述<span class="caret"></span></h2>
+	<hr>
+		在每一个匹配的元素上触发某类事件。
+
+	<br>这个函数也会导致浏览器同名的默认行为的执行。比如，如果用trigger()触发一个'submit'，则同样会导致浏览器提交表单。如果要阻止这种默认行为，应返回false。
+
+	<br>你也可以触发由bind()注册的自定义事件而不限于浏览器默认事件。
+
+	<br>事件处理函数会收到一个修复的(规范化的)事件对象，但这个对象没有特定浏览器才有的属性，比如keyCode。
+
+	<br>jQuery也支持 <a href="http://docs.jquery.com/Namespaced_Events">命名空间事件</a>。这允许你触发或者解除绑定一组特定的事件处理函数，而无需一一个指定。你可以在事件类型后面加上感叹号 ! 来只触发那些没有命名空间的事件处理函数。
+
+	<br>jQuery 1.3中新增：
+
+	<br>所有触发的事件现在会冒泡到DOM树上了。举例来说，如果你在一个段落p上触发一个事件，他首先会在这个元素上触发，其次到父元素，在到父元素的父元素，直到触发到document对象。这个事件对象有一个 .target 属性指向最开始触发这个事件的元素。你可以用 stopPropagation() 来阻止事件冒泡，或者在事件处理函数中返回false即可。
+
+	<br>事件对象构造器现在已经公开，并且你可以自行创建一个事件对象。这个事件对象可以直接传递给trigger所触发的事件处理函数。事件对象的完整属性列表可以在 <a href="http://docs.jquery.com/Events/jQuery.Event">jQuery.Event</a> 的文档里找到。
+
+	<br>你可以有三种方式指定事件类型：
+
+	<br>* 你可以传递字符串型的事件名称(type参数)。
+
+	<br>* 你可以使用jQuery.Event对象。可以将数据放进这个对象，并且这个对象可以被触发的事件处理函数获取到。
+
+	<br>* 最后，你可以传递一个带有数据的字面量对象。他将被复制到真正的jQuery.Event对象上去。 注意在这种情况下你'''必须'''指定一个 <em>type</em> 属性。
+
+
+<br />
+
+<code>
+	<br />下面的代码可以显示一个"Hello World"
+<br />
+	<br />jQuery 代码:
+	<br />$("p").bind("myEvent", function (event, message1, message2) {
+	<br />  alert(message1 + ' ' + message2);
+	<br />});
+	<br />$("p").trigger("myEvent", ["Hello","World!"]);
+</code>
+
+	
+
+	<p>Paragraph One</p><span></span>
+	<div>Div One</div>
+	<input type="submit" value="Submit">
+	<input type="text" id="foo" value="Name">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>change([[data],fn])</title>
+	<link rel="stylesheet" href="../bootstrap.min.css">
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.entered{
+			background-color: blue;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+		div
+		{
+		  	margin:3px; width:40px; height:40px;
+        	position:absolute; left:0px; top:30px; 
+       		background:green; display:none;
+       	}
+	    div.newcolor { background:blue; }
+	    span { color:red; }
+
+	</style>
+	<script type="text/javascript" src="../jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css({"background":"lightgreen","margin-left":"10px"});
+			// debugger;
+		});
+	</script>
+</head>
+<body>
+<form action="#">
+	<h1>change([[data],fn])</h1>
+	<h2>概述<span class="caret"></span></h2><hr>
+	当元素的值发生改变时，会发生 change 事件。
+	<br>该事件仅适用于文本域（text field），以及 textarea 和 select 元素。
+	<br>当用于 select 元素时，change 事件会在选择某个选项时发生。
+	<br>当用于 text field 或 text area 时，该事件会在元素失去焦点时发生。
+
+
+	<p>这是一个段落</p>
+	<button>Click Me</button>
+	<input type="text" value="name">
+</form>
+	
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>selector</title>
+	<style type="text/css">
+		.originalClass{
+			color:#ffe4e1;
+		}
+		.active{
+			color: red;
+		}
+		.inactive{
+			color: black;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.10.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").css("background","lightgreen");
+			debugger;
+		});
+	</script>
+</head>
+<body>
+	取得其中一个匹配的元素。 num表示取得第几个匹配的元素。
+	这能够让你选择一个实际的DOM 元素并且对他直接操作，而不是通过 jQuery 函数。$(this).get(0)与$(this)[0]等价。
+	<p></p>
+
+	<img src="test1.jpg"/> <img src="test2.jpg"/>
+	<p></p>
+
+</body>
+</html>
