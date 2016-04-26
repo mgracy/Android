@@ -103,6 +103,8 @@ public class RemindersActivity extends AppCompatActivity {
                                     scheduleReminder(alarm.getTime(), reminder.getContent());
                                 }
                             };
+
+                            new TimePickerDialog(RemindersActivity.this, listener,today.getHours(),today.getMinutes(),false).show();
                         }
 
                         dialog.dismiss();
