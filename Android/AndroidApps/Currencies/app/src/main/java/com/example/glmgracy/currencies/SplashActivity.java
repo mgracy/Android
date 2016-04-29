@@ -17,6 +17,7 @@ import java.util.Iterator;
 public class SplashActivity extends Activity {
     //url to currency codes used in this application
     public static final String URL_CODES = "http://openexchangerates.org/api/currencies.json";
+    public static final String KEY_ARRAYLIST = "key_arraylist";
     //ArrayList of currencies that will be fetched and passed into MainActivity
     private ArrayList<String> mCurrencies;
     @Override
@@ -28,7 +29,6 @@ public class SplashActivity extends Activity {
     }
     private class FetchCodesTask extends AsyncTask<String, Void, JSONObject> {
 
-        public static final String KEY_ARRAYLIST = "key_arraylist";
 
         @Override
         protected JSONObject doInBackground(String... params) {
