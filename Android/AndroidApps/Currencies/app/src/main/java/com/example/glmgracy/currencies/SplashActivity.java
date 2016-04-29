@@ -1,6 +1,7 @@
 package com.example.glmgracy.currencies;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ public class SplashActivity extends Activity {
     }
     private class FetchCodesTask extends AsyncTask<String, Void, JSONObject> {
 
+        public static final String KEY_ARRAYLIST = "key_arraylist";
+
         @Override
         protected JSONObject doInBackground(String... params) {
             return new JSONParser().getJSONFromUrl(params[0]);
@@ -45,6 +48,10 @@ public class SplashActivity extends Activity {
                     key = (String) iterator.next();
                     mCurrencies.add(key + " | " + jsonObject.getString(key));
                 }
+                Intent mainIntent = new Intent(SplashActivity.this,MainActivity.class);
+                mainIntent.putExtra(KEY_ARRAYLIST, mCurrencies);
+                startActivity(mainIntent);
+
                 finish();
             } catch (JSONException e) {
                 Toast.makeText(SplashActivity.this, "There's been a JSON exception: "
